@@ -9,5 +9,5 @@ public interface IOperation {
      * @param v2 The second input.
      * @return The result of the calculate.
      */
-    double doCalculate(double v1, double v2);
+    double doCalculate(double... args);
 }

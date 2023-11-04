@@ -12,7 +12,7 @@ public class Calculator {
      * @param operationRegistry {@link OperationRegistry} hosts its supported operation
      * @param display {@link Display} to display result
      */
-    public Calculator(OperationRegistry operationRegistry, Display display) {
+    public Calculator(OperationRegistry operationRegistry, Display display, Printer p) {
         this.operationRegistry = operationRegistry;
         this.display = display;
     }
@@ -23,8 +23,10 @@ public class Calculator {
      * @param operationString Represents the operation
      * @param v2 the second input
      */
-    public void calculate(double v1, String operationString, double v2) {
-        double result = operationRegistry.getOperation(operationString).doCalculate(v1, v2);
+    public void calculate(String ...args) {
+        double result = operationRegistry.getOperation(operationString).doCalculate(args);
+        p.print()
         display.showOutput(result);
+
     }
 }
